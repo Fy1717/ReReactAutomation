@@ -1,14 +1,22 @@
 import React , {Component} from "react";
 
 class User extends Component{
+
+    onDeleteCLick(id,e){
+        const { deleteUser } = this.props;
+        deleteUser(id);        
+    }
+
     render(){
+        const { id, name , email } = this.props;
+
         return(
             <tr>
-                <td>1</td>
-                <td>FY</td>
-                <td>fy@gmail.com</td>
+                <td>{id}</td>
+                <td>{name}</td>
+                <td>{email}</td>
                 <td>
-                    <button className="btn btn-danger">
+                    <button onClick={this.onDeleteCLick.bind(this,id)} className="btn btn-danger">
                         Delete
                     </button>
                 </td>
@@ -17,4 +25,4 @@ class User extends Component{
     }
 }
 
-export default User;
+export default User; 

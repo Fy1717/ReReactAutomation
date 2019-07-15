@@ -5,7 +5,7 @@ import User from "./User";
 class Users extends Component{
 
     render(){
-        const {users} = this.props;
+        const {users, deleteUser} = this.props;
 
         return(
             <table className="table table-dark">
@@ -26,6 +26,7 @@ class Users extends Component{
                             id = {id}
                             name = {name}
                             email = {email}
+                            deleteUser= {deleteUser}
                             />;
                     })}
                 </tbody>
